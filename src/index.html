@@ -1,12 +1,151 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trello</title>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" href="./style/style.scss" />
+	<title>Trello</title>
 </head>
+
 <body>
-    <h1>Trello is working...</h1>
+	<header class="header">
+		<div class="container">
+			<a class="header__logo" href="#">
+				<img src="assets/images/logo-trello.png" alt="trello" />
+			</a>
+			<div class="header__clock">12:00</div>
+		</div>
+	</header>
+
+	<main>
+		<section class="root">
+			<div class="container">
+				<div class="board">
+					<div class="board__title">
+						<p contenteditable="true">Todo:</p>
+						<p>1</p>
+					</div>
+
+					<ul class="board__list">
+						<li class="card" draggable="true">
+							<button class="btn btn-edit">Edit</button>
+
+							<button class="btn btn-delete">Delete</button>
+							<p>Title</p>
+							<p>Description</p>
+							<p>User</p>
+							<p>Time</p>
+							<button class="btn btn-move">
+								Тут можно отрисовать стрелку с помощью CSS
+							</button>
+						</li>
+					</ul>
+
+					<button class="board__btn-add">Add todo</button>
+				</div>
+
+				<div class="board">
+					<div class="board__title">
+						<p contenteditable="true">In progress:</p>
+						<p>1</p>
+					</div>
+
+					<ul class="board__list">
+						<li class="card" draggable="true">
+							<button class="btn btn-back">Back</button>
+							<button class="btn btn-complete">Complete</button>
+							<p>Title</p>
+							<p>Description</p>
+							<p>User</p>
+							<p>Time</p>
+						</li>
+					</ul>
+				</div>
+
+				<div class="board">
+					<div class="board__title">
+						<p contenteditable="true">Done:</p>
+						<p>1</p>
+					</div>
+
+					<ul class="board__list">
+						<li class="card" draggable="true">
+							<button class="btn btn-delete">Delete</button>
+							<p>Title</p>
+							<p>Description</p>
+							<p>User</p>
+							<p>Time</p>
+						</li>
+					</ul>
+
+					<button class="board__btn-delete-all">Delete all</button>
+				</div>
+			</div>
+
+			<!-- Additional blocks -->
+
+			<!-- Данную карточку можно использовать для создания новой карточки -->
+			<div class="card-form">
+				<input class="card-form__title" type="text" placeholder="Title" />
+				<textarea class="card-form__desc" placeholder="Description"></textarea>
+
+				<label for="card-form__deadline">
+					<input id="card-form__deadline" type="datetime-local" />
+				</label>
+
+				<div class="card-form__choices">
+					<select>
+						<option value="Select user" selected>Select user</option>
+						<option value="User 1">User 1</option>
+						<option value="User 2">User 2</option>
+						<option value="User 3">User 3</option>
+					</select>
+
+					<button class="btn btn-cancel" type="reset">Cancel</button>
+					<button class="btn btn-confirm" type="submit">Confirm</button>
+				</div>
+			</div>
+
+			<!-- Данную карточку можно использовать для внесения исправлений в уже созданную карточку -->
+			<div class="card-form">
+				<input class="card-form__title" type="text" placeholder="Title" />
+				<textarea class="card-form__desc" placeholder="Description"></textarea>
+
+				<label for="card-form__deadline">
+					<input id="card-form__deadline" type="datetime-local" />
+				</label>
+
+				<div class="card-form__choices">
+					<select>
+						<option value="Select user" selected>Select user</option>
+						<option value="User 1">User 1</option>
+						<option value="User 2">User 2</option>
+						<option value="User 3">User 3</option>
+					</select>
+
+					<button class="btn btn-cancel" type="reset">Cancel</button>
+					<button class="btn btn-confirm" type="submit">Confirm</button>
+				</div>
+			</div>
+
+			<!-- Это окошко должно вылетать при нажатии на кнопку ">" (если дел больше 6) -->
+			<div class="warning">
+				<p>Warning!</p>
+				<button class="btn btn-cancel" type="reset">Cancel</button>
+				<button class="btn btn-confirm" type="submit">Confirm</button>
+			</div>
+
+			<!-- Это окошко должно вылетать при нажатии на кнопку "Delete all" в колонке Done -->
+			<div class="warning">
+				<p>Warning!</p>
+				<button class="btn btn-cancel" type="reset">Cancel</button>
+				<button class="btn btn-confirm" type="submit">Confirm</button>
+			</div>
+		</section>
+	</main>
+	<script src="./js/index.js"></script>
 </body>
+
 </html>
