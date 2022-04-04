@@ -1,0 +1,39 @@
+@import "extra.scss";
+.container{
+	max-width: 1230px;
+	margin: 0 auto;
+	padding: 0 15px;
+}
+.header{
+	background-color: $bgWrapper;
+	padding: 5px 0;
+	.container{
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	&__logo{
+		display: flex;
+		width: 100px;
+		padding: 5px;
+
+		img{
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+		&:hover{
+			border-radius: 5px;
+			background-color: $bgItem;
+		}
+	}
+	&__clock{
+width: 100px;
+background-color: $bgItem;
+padding: 5px;
+border-radius: 5px;
+display: flex;
+justify-content: center;
+@include text;
+	}
+}
