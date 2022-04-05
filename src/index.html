@@ -31,11 +31,15 @@
 						<div class="board__block" draggable="true">
 							<p>Title</p>
 							<p>Description</p>
-							<p>User</p>
 							<p><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
 									<path
 										d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200zm61.8-104.4l-84.9-61.7c-3.1-2.3-4.9-5.9-4.9-9.7V116c0-6.6 5.4-12 12-12h32c6.6 0 12 5.4 12 12v141.7l66.8 48.6c5.4 3.9 6.5 11.4 2.6 16.8L334.6 349c-3.9 5.3-11.4 6.5-16.8 2.6z" />
 								</svg>Time</p>
+							<div class="photo"><img
+									src="./assets/images/png-transparent-silhouette-child-woman-silhouette-child-face-animals.png"
+									alt="userPhoto">
+							</div>
+
 							<!-- <button class="btn btn-move">
 								Тут можно отрисовать стрелку с помощью CSS
 							</button> -->
@@ -80,11 +84,14 @@
 						<div class="board__block" draggable="true">
 							<p>Title</p>
 							<p>Description</p>
-							<p>User</p>
 							<p><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
 									<path
 										d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200zm61.8-104.4l-84.9-61.7c-3.1-2.3-4.9-5.9-4.9-9.7V116c0-6.6 5.4-12 12-12h32c6.6 0 12 5.4 12 12v141.7l66.8 48.6c5.4 3.9 6.5 11.4 2.6 16.8L334.6 349c-3.9 5.3-11.4 6.5-16.8 2.6z" />
 								</svg>Time</p>
+							<div class="photo"><img
+									src="./assets/images/png-transparent-silhouette-child-woman-silhouette-child-face-animals.png"
+									alt="userPhoto">
+							</div>
 						</div>
 						<div class="board__buttons">
 							<button class="btn btn-edit">
@@ -125,11 +132,15 @@
 						<div class="board__block" draggable="true">
 							<p>Title</p>
 							<p>Description</p>
-							<p>User</p>
 							<p><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
 									<path
 										d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200zm61.8-104.4l-84.9-61.7c-3.1-2.3-4.9-5.9-4.9-9.7V116c0-6.6 5.4-12 12-12h32c6.6 0 12 5.4 12 12v141.7l66.8 48.6c5.4 3.9 6.5 11.4 2.6 16.8L334.6 349c-3.9 5.3-11.4 6.5-16.8 2.6z" />
 								</svg>Time</p>
+							<div class="photo"><img
+									src="./assets/images/png-transparent-silhouette-child-woman-silhouette-child-face-animals.png"
+									alt="userPhoto">
+							</div>
+
 						</div>
 						<div class="board__buttons">
 							<button class="btn btn-edit">
@@ -165,45 +176,47 @@
 
 			<!-- Данную карточку можно использовать для создания новой карточки -->
 			<div class="card-form">
-				<input class="card-form__title" type="text" placeholder="Title" />
-				<textarea class="card-form__desc" placeholder="Description"></textarea>
+				<input class="card-form__title item" type="text" placeholder="Title" />
+				<textarea class="card-form__desc item" placeholder="Description"></textarea>
 
 				<label for="card-form__deadline">
-					<input id="card-form__deadline" type="datetime-local" />
+					<input class="item" id="card-form__deadline" type="datetime-local" />
 				</label>
 
 				<div class="card-form__choices">
-					<select>
+					<select class="item">
 						<option value="Select user" selected>Select user</option>
 						<option value="User 1">User 1</option>
 						<option value="User 2">User 2</option>
 						<option value="User 3">User 3</option>
 					</select>
-
-					<button class="btn btn-cancel" type="reset">Cancel</button>
-					<button class="btn btn-confirm" type="submit">Confirm</button>
+					<div class="card-form__buttons">
+						<button class="item btn-cancel" type="reset">Cancel</button>
+						<button class="item btn-confirm" type="submit">Confirm</button>
+					</div>
 				</div>
 			</div>
 
 			<!-- Данную карточку можно использовать для внесения исправлений в уже созданную карточку -->
 			<div class="card-form">
-				<input class="card-form__title" type="text" placeholder="Title" />
-				<textarea class="card-form__desc" placeholder="Description"></textarea>
+				<input class="card-form__title item" type="text" placeholder="Title" />
+				<textarea class="card-form__desc item" placeholder="Description"></textarea>
 
 				<label for="card-form__deadline">
-					<input id="card-form__deadline" type="datetime-local" />
+					<input class="item" id="card-form__deadline" type="datetime-local" />
 				</label>
 
 				<div class="card-form__choices">
-					<select>
+					<select class="item">
 						<option value="Select user" selected>Select user</option>
 						<option value="User 1">User 1</option>
 						<option value="User 2">User 2</option>
 						<option value="User 3">User 3</option>
 					</select>
-
-					<button class="btn btn-cancel" type="reset">Cancel</button>
-					<button class="btn btn-confirm" type="submit">Confirm</button>
+					<div class="card-form__buttons">
+						<button class="item btn-cancel" type="reset">Cancel</button>
+						<button class="item btn-confirm" type="submit">Confirm</button>
+					</div>
 				</div>
 			</div>
 
