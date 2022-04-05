@@ -5,12 +5,17 @@
 	box-sizing: border-box;
 	font-family: 'Roboto Condensed', sans-serif;
 }
+button{
+	cursor: pointer;
+}
 
 $textBlack: rgb(41, 40, 40);
 $textWhite: rgb(255, 255, 255);
 $bgWrapper:  rgb(64, 92, 117);
-$bgBoard:  rgb(213, 211, 211);
+$bgBoard:  rgb(241, 239, 239);
+$bgBoardHover:  rgba(64, 92, 117, 0.7);
 $bgItem: rgba(255, 255, 255, 0.2);
+$bgDimlyHover:rgba(0, 0, 0, 0.1);
 
 @mixin titleBoard {
 	font-weight: 400;

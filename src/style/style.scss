@@ -26,6 +26,9 @@
 			border-radius: 5px;
 			background-color: $bgItem;
 		}
+		&:active{
+			opacity: 0.8;
+		}
 	}
 	&__clock{
 width: 100px;
@@ -35,6 +38,7 @@ border-radius: 5px;
 display: flex;
 justify-content: center;
 @include text;
+color: $textWhite;
 	}
 }
 .root{
@@ -66,20 +70,85 @@ justify-content: center;
 	margin-bottom: 5px;
 	h2, p{
 		@include titleBoard;
+		padding: 5px;
+	}
+	h2:focus{
+		border-radius: 3px;
+		outline: 2px solid $bgWrapper;
+		background-color: $bgDimlyHover;
 	}
 }
-&__block{
+&__card{
 	display: flex;
 	justify-content: space-between;
 	background-color: $textWhite;
+	box-shadow: 0 1px 1px;
 		border-radius: 5px;
 		padding: 5px;
 		margin-bottom: 10px;
+		&:hover .board__buttons{
+display: flex;
+		}
 }
-&__list{
-	list-style: none;
-	.card{
-		@include text;
+&__block{
+	@include text;
+	p{
+		margin-bottom: 5px;
+		&:last-child{
+			margin-bottom: 0;
+		}
+	}
+	svg{
+		width: 15px;
+		height: 15px;
+		margin-right: 5px;
 	}
 }
+	&__buttons{
+		flex-direction: column;
+		justify-content: space-between;
+		display: none;
+		.btn{
+			opacity: 0.7;
+			width: 20px;
+			height: 20px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			border: none;
+			background-color: $textWhite;
+			border-radius: 3px;
+			&:hover{
+				background-color: $bgDimlyHover;
+			}
+			&:active{
+				opacity: 0.8;
+			}
+			svg{
+				width: 80%;
+				height: 80%;
+			}
+		}
+	}
+	&__bottom{
+		display: flex;
+		justify-content: space-between;
+		.btn{
+			border: none;
+			padding: 5px;
+			border-radius: 3px;
+			&:hover{
+				background-color: $bgDimlyHover;
+			}
+			&:active{
+				opacity: 0.8;
+			}
+			svg{
+				width: 10px;
+				height: 10px;
+				margin-right: 5px;
+			}
+		}
+	}
+	
 }
