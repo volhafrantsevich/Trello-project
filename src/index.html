@@ -27,22 +27,23 @@
 						<h2 contenteditable="true">Todo:</h2>
 						<p>1</p>
 					</div>
-
-					<ul class="board__list">
-						<li class="card" draggable="true">
-							<button class="btn btn-edit">Edit</button>
-
-							<button class="btn btn-delete">Delete</button>
-							<p>Title</p>
-							<p>Description</p>
-							<p>User</p>
-							<p>Time</p>
-							<button class="btn btn-move">
+					<div class="board__block">
+						<ul class="board__list">
+							<li class="card" draggable="true">
+								<p>Title</p>
+								<p>Description</p>
+								<p>User</p>
+								<p>Time</p>
+								<!-- <button class="btn btn-move">
 								Тут можно отрисовать стрелку с помощью CSS
-							</button>
-						</li>
-					</ul>
-
+							</button> -->
+							</li>
+						</ul>
+						<div class="board__buttons">
+							<button class="btn btn-edit">Edit</button>
+							<button class="btn btn-delete">Delete</button>
+						</div>
+					</div>
 					<button class="board__btn-add">Add todo</button>
 				</div>
 
@@ -51,17 +52,21 @@
 						<h2 contenteditable="true">In progress:</h2>
 						<p>1</p>
 					</div>
-
-					<ul class="board__list">
-						<li class="card" draggable="true">
-							<button class="btn btn-back">Back</button>
-							<button class="btn btn-complete">Complete</button>
-							<p>Title</p>
-							<p>Description</p>
-							<p>User</p>
-							<p>Time</p>
-						</li>
-					</ul>
+					<div class="board__block">
+						<ul class="board__list">
+							<li class="card" draggable="true">
+								<p>Title</p>
+								<p>Description</p>
+								<p>User</p>
+								<p>Time</p>
+							</li>
+						</ul>
+						<div class="board__buttons">
+							<button class="btn btn-edit">Edit</button>
+							<button class="btn btn-delete">Delete</button>
+						</div>
+					</div>
+					<button class="board__btn-add">Add todo</button>
 				</div>
 
 				<div class="board">
@@ -69,16 +74,21 @@
 						<h2 contenteditable="true">Done:</h2>
 						<p>1</p>
 					</div>
-
-					<ul class="board__list">
-						<li class="card" draggable="true">
+					<div class="board__block">
+						<ul class="board__list">
+							<li class="card" draggable="true">
+								<p>Title</p>
+								<p>Description</p>
+								<p>User</p>
+								<p>Time</p>
+							</li>
+						</ul>
+						<div class="board__buttons">
+							<button class="btn btn-edit">Edit</button>
 							<button class="btn btn-delete">Delete</button>
-							<p>Title</p>
-							<p>Description</p>
-							<p>User</p>
-							<p>Time</p>
-						</li>
-					</ul>
+						</div>
+					</div>
+					<button class="board__btn-add">Add todo</button>
 
 					<button class="board__btn-delete-all">Delete all</button>
 				</div>
