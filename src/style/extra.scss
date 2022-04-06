@@ -16,7 +16,7 @@ $bgBoard:  rgb(241, 239, 239);
 $bgBoardHover:  rgba(64, 92, 117, 0.7);
 $bgItem: rgba(255, 255, 255, 0.2);
 $bgDimlyHover:rgba(0, 0, 0, 0.1);
-$bgFormItems:rgba(65, 64, 64, 0.9);
+$bgFormItems:rgba(42, 41, 41, 0.9);
 $bgCancel: rgba(228, 148, 148, 1);
 $bgConfirm: rgba(47, 119, 170, 1);
 
@@ -28,7 +28,7 @@ $bgConfirm: rgba(47, 119, 170, 1);
 }
 @mixin text {
 	font-weight: 300;
-	font-size: 18px;
+	font-size: 16px;
 	line-height: 20px;
 	color: $textBlack;
 }
