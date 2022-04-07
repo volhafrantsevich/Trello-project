@@ -1,3 +1,8 @@
+import { getUsers } from "./modules/getUsers";
+
+// create template select
+getUsers();
+
 /**Clock */
 setInterval(showTime, 1000);
 function showTime() {
