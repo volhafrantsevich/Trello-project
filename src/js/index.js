@@ -1,3 +1,7 @@
+import { getUsers } from "./modules/select/getUsers";
+
+getUsers();
+
 /**Clock */
 setInterval(showTime, 1000);
 function showTime() {
