@@ -31,5 +31,5 @@ function checkTime(i) {
 import { addBoards } from "./modules/select/addBoards";
 
 //Cards with tasks
-import { showFormForNewTask } from "./modules/select/addCards";
-import { addCard } from "./modules/select/addCards";
+import { addTask } from "./modules/select/addTasks";
+addTask();

@@ -1,21 +1,8 @@
-// Появление формы для заполнения информацией для создания новой карточки с заданием
-// Делегирование событий - Поведение: «Переключатель» (Toggler)
-// При клике на элемент с атрибутом data-toggle-id будет скрываться/показываться элемент с заданным id:
+const cardsLists = document.querySelectorAll(".cards-list");
 
-export function showFormForNewTask() {
-  document.addEventListener("click", function (event) {
-    let id = event.target.dataset.toggleId;
-    if (!id) return;
+const addCardBtn = document.querySelector(".btn-add");
 
-    let elem = document.getElementById(id);
-
-    elem.style.display = "block";
-  });
-}
-
-showFormForNewTask();
-
-const cardsList = document.querySelectorAll(".cards-list");
+const formAdd = document.querySelector(".card-form.add-item");
 
 const formTitle = document.querySelector(".card-form__title");
 let formTitleValue = "";
@@ -23,7 +10,7 @@ let formTitleValue = "";
 const formDescription = document.querySelector(".card-form__desc");
 let formDescriptionValue = "";
 
-const formDueDate = document.querySelector(".card-form__deadline input");
+const formDueDate = document.querySelector("#card-form__deadline");
 let formDueDateValue = "";
 
 const formSelectUser = document.querySelector(".card-form__choices select");
@@ -32,20 +19,56 @@ let formSelectUserValue = "";
 const formCancelBtn = document.querySelector(".btn-cancel");
 const formConfirmBtn = document.querySelector(".btn-confirm");
 
-// События на поля формы для нового задания - пока для примера на заголовок и кнопку confirm
-export function addCard() {
-  cardTitle.addEventListener("input", (event) => {
-    cardTitleValue = event.target.value;
+export function addTask() {
+  // Появление формы для карточки с новым заданием
+  addCardBtn.addEventListener("click", () => {
+    formAdd.style.display = "block";
   });
 
-  const formConfirmBtn = document.querySelector(".btn-confirm");
+  // Добавление информации в форму для новой карточки
+  // Заголовок нового задания
+  formTitle.addEventListener("input", (event) => {
+    formTitleValue = event.target.value;
+  });
 
+  // Description нового задания
+  formDescription.addEventListener("input", (event) => {
+    formDescriptionValue = event.target.value;
+  });
+
+  // Due Date нового задания
+  formDueDate.addEventListener("input", (event) => {
+    formDueDateValue = event.target.value;
+  });
+
+  // Select User нового задания
+  formSelectUser.addEventListener("input", (event) => {
+    const formSelectUserIndex = event.target.selectedIndex;
+    formSelectUserValue = usersList[formSelectUserIndex].image;
+  });
+
+  // Кнопка Cancel
+  formCancelBtn.addEventListener("click", () => {
+    formTitle.value = "";
+    formTitleValue = "";
+    formDescription.value = "";
+    formDescriptionValue = "";
+    formDueDate.value = "";
+    formDueDateValue = "";
+    formSelectUser.value = "Select user";
+    formSelectUserValue = "";
+    formAdd.style.display = "none";
+  });
+
+  // Кнопка Confirm
   formConfirmBtn.addEventListener("click", () => {
     const newCard = document.createElement("div");
     newCard.classList.add("board__card");
-    newCard.innerHTML = `<div class="board__block" draggable="true">
-                    <p>${cardTitleValue}</p>
-                    <p>Description</p>
+    newCard.draggable = true;
+    newCard.innerHTML = `
+                  <div class="board__block">
+                    <p>${formTitleValue}</p>
+                    <p>${formDescriptionValue}</p>
                     <p>
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -55,11 +78,11 @@ export function addCard() {
                           d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200zm61.8-104.4l-84.9-61.7c-3.1-2.3-4.9-5.9-4.9-9.7V116c0-6.6 5.4-12 12-12h32c6.6 0 12 5.4 12 12v141.7l66.8 48.6c5.4 3.9 6.5 11.4 2.6 16.8L334.6 349c-3.9 5.3-11.4 6.5-16.8 2.6z"
                         />
                       </svg>
-                      >Time
+                      ${formDueDateValue}
                     </p>
                     <div class="photo">
                       <img
-                        src="./assets/images/png-transparent-silhouette-child-woman-silhouette-child-face-animals.png"
+                        src="${formSelectUserValue}"
                         alt="userPhoto"
                       />
                     </div>
@@ -87,6 +110,7 @@ export function addCard() {
                       </svg>
                     </button>
                   </div>
+
                   <div class="card-form edit-item">
                     <input
                       class="card-form__title item"
@@ -126,6 +150,36 @@ export function addCard() {
                     </div>
                   </div>`;
 
-    cardsList.append(newCard);
+    cardsLists[0].appendChild(newCard);
+
+    formTitle.value = "";
+    formTitleValue = "";
+    formDescription.value = "";
+    formDescriptionValue = "";
+    formDueDate.value = "";
+    formDueDateValue = "";
+    formSelectUser.value = "Select user";
+    formSelectUserValue = "";
+    formAdd.style.display = "none";
   });
 }
+
+// Для примера - для демонстрации, что при выборе юзера меняется его картинка
+const usersList = [
+  {
+    name: "Select user",
+  },
+  {
+    name: "User 1",
+    image:
+      "./assets/images/png-transparent-silhouette-child-woman-silhouette-child-face-animals.png",
+  },
+  {
+    name: "User 2",
+    image: "./assets/images/kamil-nureev_1.jpg",
+  },
+  {
+    name: "User 3",
+    image: "./assets/images/logo-trello.png",
+  },
+];
