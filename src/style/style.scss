@@ -50,6 +50,12 @@
   .container {
     display: flex;
     flex-wrap: nowrap;
+
+    .boards-wrapper {
+      display: flex;
+      flex-wrap: nowrap;
+      margin-right: 40px;
+    }
   }
 }
 
