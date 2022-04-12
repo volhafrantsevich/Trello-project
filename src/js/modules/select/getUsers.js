@@ -8,5 +8,5 @@ export async function getUsers() {
 
     const select = createTemplateSelect(users);
     const wrapForSelect = document.querySelector('#templateForSelect');
-    wrapForSelect.appendChild(select);  
+    wrapForSelect.prepend(select);  
 }
