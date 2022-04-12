@@ -1,3 +1,8 @@
+import silhouette from "../../../assets/images/silhouette.png";
+import backgr from "../../../assets/images/backgr.jpg";
+import logo from "../../../assets/images/logo-trello.png";
+
+
 const cardsLists = document.querySelectorAll(".cards-list");
 
 const addCardBtn = document.querySelector(".btn-add");
@@ -171,15 +176,14 @@ const usersList = [
   },
   {
     name: "User 1",
-    image:
-      "./assets/images/png-transparent-silhouette-child-woman-silhouette-child-face-animals.png",
+    image: silhouette,
   },
   {
     name: "User 2",
-    image: "./assets/images/kamil-nureev_1.jpg",
+    image: backgr,
   },
   {
     name: "User 3",
-    image: "./assets/images/logo-trello.png",
+    image: logo,
   },
 ];
