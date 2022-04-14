@@ -112,19 +112,19 @@
       height: 15px;
       margin-right: 5px;
     }
-    .photo {
+    .user {
       display: flex;
       justify-content: center;
       align-items: center;
       border-radius: 50%;
       overflow: hidden;
-      width: 20px;
-      height: 20px;
+      width: 30px;
+      height: 30px;
+      padding: 5px;
       margin-bottom: 5px;
-      img {
-        width: 100%;
-        height: 100%;
-      }
+      background-color: rgb(127, 255, 212);
+      font-weight: 600;
+      font-size: 14px;
     }
   }
   &__buttons {
