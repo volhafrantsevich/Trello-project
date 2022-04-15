@@ -13,3 +13,7 @@ import { addBoards } from "./modules/addUtils/addBoards";
 //Cards with tasks
 import { addTask } from "./modules/addUtils/addTasks";
 addTask();
+
+//Drag&drop
+import { createDragAndDrop } from "./modules/drag&drop/drag&drop";
+createDragAndDrop()

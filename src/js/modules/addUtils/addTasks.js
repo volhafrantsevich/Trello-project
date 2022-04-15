@@ -2,6 +2,9 @@ import silhouette from "../../../assets/images/silhouette.png";
 import backgr from "../../../assets/images/backgr.jpg";
 import logo from "../../../assets/images/logo-trello.png";
 
+import { createDragAndDrop } from "../drag&drop/drag&drop";
+
+
 const cardsLists = document.querySelectorAll(".cards-list");
 
 const addCardBtn = document.querySelector(".btn-add");
@@ -48,7 +51,6 @@ export function addTask() {
 
   // Select User нового задания
   function getValueOption() {
-    debugger;
     const formSelectUser = document.querySelector(".card-form__choices select");
     let userName = formSelectUser.value;
 
@@ -143,6 +145,8 @@ export function addTask() {
     // formSelectUser.value = "Select user";
     formSelectUserValue = "";
     formAdd.style.display = "none";
+	 
+	 createDragAndDrop()
   });
 
   // Кнопка Cancel

@@ -86,7 +86,9 @@
       background-color: $bgDimlyHover;
     }
   }
+
   &__card {
+	 cursor: grabbing; 
     display: flex;
     justify-content: space-between;
     background-color: $textWhite;
@@ -98,7 +100,11 @@
     &:hover .board__buttons {
       display: flex;
     }
+	&.dragged{
+		border: 2px solid $bgWrapper;
+	}
   }
+
   &__block {
     @include text;
     p {

@@ -1,4 +1,5 @@
 // Создание новых досок
+import { createDragAndDrop } from "../drag&drop/drag&drop";
 
 const btnAddBoard = document.querySelector(".btn-add-board");
 btnAddBoard.addEventListener("click", addBoards);
@@ -19,4 +20,6 @@ export function addBoards() {
   `;
 
   boards.append(boardItem);
+
+  createDragAndDrop();
 }
