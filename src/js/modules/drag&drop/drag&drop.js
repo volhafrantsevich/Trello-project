@@ -36,12 +36,12 @@ export function createDragAndDrop() {
 			})
 
 			list.addEventListener('dragleave', function (e) {
-				e.preventDefault()
+				// e.preventDefault()
 				this.style.backgroundColor = 'rgba(0,0,0,0)'
 			})
 
 			list.addEventListener('drop', function (e) {
-				e.preventDefault()
+				// e.preventDefault()
 				this.style.backgroundColor = 'rgba(0,0,0,0)'
 				this.append(draggedCard)
 			})

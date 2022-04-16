@@ -61,7 +61,7 @@
 
 .board {
   max-width: 270px;
-  width: 100%;
+  width: 600px;
   padding: 10px;
   background-color: $bgBoard;
   border-radius: 3px;
@@ -269,4 +269,8 @@
     height: 15px;
     margin-right: 10px;
   }
+}
+
+.cards-list {
+  min-height: 200px;
 }
