@@ -109,42 +109,43 @@
                     </div>
                   </div>
                 </div> -->
-              </div>
+					 <div class="card-form add-item">
+						<input
+						  class="card-form__title item"
+						  type="text"
+						  placeholder="Title"
+						/>
+						<textarea
+						  class="card-form__desc item"
+						  placeholder="Description"
+						></textarea>
+  
+						<label for="card-form__deadline">
+						  <input
+							 class="item"
+							 id="card-form__deadline"
+							 type="datetime-local"
+						  />
+						</label>
+  
+						<div class="card-form__choices" id="templateForSelect">
+						  <!-- <select class="item">
+							 <option value="Select user" selected>Select user</option>
+							 <option value="User 1">User 1</option>
+							 <option value="User 2">User 2</option>
+							 <option value="User 3">User 3</option>
+						  </select> -->
+						  <div class="card-form__buttons">
+							 <button class="item btn-cancel" type="reset">Cancel</button>
+							 <button class="item btn-confirm" type="submit">
+								Confirm
+							 </button>
+						  </div>
+						</div>
+					 </div>
+					</div>
 
-              <div class="card-form add-item">
-                <input
-                  class="card-form__title item"
-                  type="text"
-                  placeholder="Title"
-                />
-                <textarea
-                  class="card-form__desc item"
-                  placeholder="Description"
-                ></textarea>
-
-                <label for="card-form__deadline">
-                  <input
-                    class="item"
-                    id="card-form__deadline"
-                    type="datetime-local"
-                  />
-                </label>
-
-                <div class="card-form__choices" id="templateForSelect">
-                  <!-- <select class="item">
-                    <option value="Select user" selected>Select user</option>
-                    <option value="User 1">User 1</option>
-                    <option value="User 2">User 2</option>
-                    <option value="User 3">User 3</option>
-                  </select> -->
-                  <div class="card-form__buttons">
-                    <button class="item btn-cancel" type="reset">Cancel</button>
-                    <button class="item btn-confirm" type="submit">
-                      Confirm
-                    </button>
-                  </div>
-                </div>
-              </div>
+             
 
               <div class="board__bottom">
                 <button class="btn btn-add">

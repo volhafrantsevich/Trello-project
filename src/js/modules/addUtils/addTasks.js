@@ -1,9 +1,4 @@
-import silhouette from "../../../assets/images/silhouette.png";
-import backgr from "../../../assets/images/backgr.jpg";
-import logo from "../../../assets/images/logo-trello.png";
-
 import { createDragAndDrop } from "../drag&drop/drag&drop";
-
 
 const cardsLists = document.querySelectorAll(".cards-list");
 
@@ -31,6 +26,7 @@ export function addTask() {
   // Появление формы для карточки с новым заданием
   addCardBtn.addEventListener("click", () => {
     formAdd.style.display = "block";
+	 cardsLists[0].appendChild(formAdd);
   });
 
   // Добавление информации в форму для новой карточки
@@ -85,7 +81,7 @@ export function addTask() {
                   <div class="board__block">
                     <p>${formTitleValue}</p>
                     <p>${formDescriptionValue}</p>
-                    <p>
+                    <div class="clock">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 512 512"
@@ -95,7 +91,7 @@ export function addTask() {
                         />
                       </svg>
                       ${formDueDateValue}
-                    </p>
+                    </div>
                     <div class="user">${formSelectUserValue}</div>
                   </div>
 
