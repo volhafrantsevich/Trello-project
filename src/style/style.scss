@@ -55,11 +55,15 @@
       display: flex;
       flex-wrap: nowrap;
       margin-right: 40px;
+		min-width: 370px;
+		width: 100%;
     }
   }
 }
 
 .board {
+	display: flex;
+    flex-direction: column;
   max-width: 270px;
   width: 100%;
   padding: 10px;
@@ -85,6 +89,10 @@
       outline: 2px solid $bgWrapper;
       background-color: $bgDimlyHover;
     }
+  }
+
+  .cards-list{
+	  min-height:200px;
   }
 
   &__card {
@@ -160,6 +168,7 @@
     }
   }
   &__bottom {
+	  margin-top: auto;
     display: flex;
     justify-content: space-between;
     .btn {

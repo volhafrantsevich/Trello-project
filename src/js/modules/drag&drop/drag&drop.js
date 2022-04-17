@@ -21,7 +21,7 @@ export function createDragAndDrop() {
 			draggedCard = null;
 
 			setTimeout(() => {
-				card.style.display = 'block';
+				card.style.display = 'flex';
 			}, 0)
 		})
 
@@ -32,16 +32,14 @@ export function createDragAndDrop() {
 			list.addEventListener('dragover', e => e.preventDefault())
 			list.addEventListener('dragenter', function (e) {
 				e.preventDefault()
-				this.style.backgroundColor = 'rgba(0,0,0,0.5)'
+				this.style.backgroundColor = 'rgba(0,0,0,0.1)'
 			})
 
 			list.addEventListener('dragleave', function (e) {
-				e.preventDefault()
 				this.style.backgroundColor = 'rgba(0,0,0,0)'
 			})
 
 			list.addEventListener('drop', function (e) {
-				e.preventDefault()
 				this.style.backgroundColor = 'rgba(0,0,0,0)'
 				this.append(draggedCard)
 			})
