@@ -28,3 +28,5 @@ createDragAndDrop()
 //DelAll
 import { delAll } from "./modules/delUtils/delAll"
 
+import {warningDeleteAll} from "./modules/warningDeletAll/warningDeleteAll"
+

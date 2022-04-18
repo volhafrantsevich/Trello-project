@@ -126,6 +126,7 @@ export function addTask() {
   // Кнопка Confirm
   formConfirmBtn.addEventListener("click", () => {
     getValueOption();
+    
 
     todoObj.titleValue = formTitleValue;
     todoObj.descriptionValue = formDescriptionValue;
