@@ -26,15 +26,22 @@ const formConfirmBtn = document.querySelector(".btn-confirm");
 
 let newCard;
 
-function createNewCard() {
-  newCard = document.createElement("div");
-  newCard.classList.add("board__card");
-  newCard.draggable = true;
-}
+// function createNewCard() {
+//   newCard = document.createElement("div");
+//   newCard.classList.add("board__card");
+//   newCard.draggable = true;
+// }
 
 export function renderTask(todoObj) {
+
+  function createNewCard() {
+    newCard = document.createElement("div");
+    newCard.classList.add("board__card");
+    newCard.draggable = true;
+  }
+
   createNewCard();
-  return (newCard.innerHTML = `
+  newCard.innerHTML = `
                   <div class="board__block">
                     <p>${todoObj.titleValue}</p>
                     <p>${todoObj.descriptionValue}</p>
@@ -73,7 +80,9 @@ export function renderTask(todoObj) {
                         />
                       </svg>
                     </button>
-                  </div>`);
+                  </div>`;
+
+                  return newCard;
 }
 
 export function addTask() {
@@ -125,6 +134,7 @@ export function addTask() {
 
     todo.push(todoObj);
     updateLocalStorageForTasks(todo);
+    console.log(todo);
 
     renderTask(todoObj);
 
