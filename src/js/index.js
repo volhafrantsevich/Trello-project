@@ -24,3 +24,7 @@ addTask();
 //Drag&drop
 import { createDragAndDrop } from "./modules/drag&drop/drag&drop";
 createDragAndDrop()
+
+//DelAll
+import { delAll } from "./modules/delUtils/delAll"
+

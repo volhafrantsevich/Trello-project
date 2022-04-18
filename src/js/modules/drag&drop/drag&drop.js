@@ -18,11 +18,12 @@ export function createDragAndDrop() {
 
 		card.addEventListener('dragend', () => {
 			draggedCard.classList.remove('dragged');
-			draggedCard = null;
-
+			
 			setTimeout(() => {
 				card.style.display = 'flex';
+			draggedCard = null;
 			}, 0)
+
 		})
 
 		for (let j = 0; j < cardsLists.length; j++) {
