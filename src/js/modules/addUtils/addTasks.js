@@ -1,4 +1,5 @@
 import { createDragAndDrop } from "../drag&drop/drag&drop";
+import { updateLocalStorageForTasks } from "../localStorage/updateLocalStorageTasks";
 
 const cardsLists = document.querySelectorAll(".cards-list");
 
@@ -17,7 +18,7 @@ let formDueDateValue = "";
 
 let formSelectUserValue = "";
 
-let todo = [];
+export let todo = [];
 let todoObj = {};
 
 const formCancelBtn = document.querySelector(".btn-cancel");
@@ -25,15 +26,22 @@ const formConfirmBtn = document.querySelector(".btn-confirm");
 
 let newCard;
 
-function createNewCard() {
-  newCard = document.createElement("div");
-  newCard.classList.add("board__card");
-  newCard.draggable = true;
-}
+// function createNewCard() {
+//   newCard = document.createElement("div");
+//   newCard.classList.add("board__card");
+//   newCard.draggable = true;
+// }
 
-function renderTask(todoObj) {
+export function renderTask(todoObj) {
+
+  function createNewCard() {
+    newCard = document.createElement("div");
+    newCard.classList.add("board__card");
+    newCard.draggable = true;
+  }
+
   createNewCard();
-  return (newCard.innerHTML = `
+  newCard.innerHTML = `
                   <div class="board__block">
                     <p>${todoObj.titleValue}</p>
                     <p>${todoObj.descriptionValue}</p>
@@ -72,7 +80,9 @@ function renderTask(todoObj) {
                         />
                       </svg>
                     </button>
-                  </div>`);
+                  </div>`;
+
+                  return newCard;
 }
 
 export function addTask() {
@@ -123,6 +133,8 @@ export function addTask() {
     todoObj.selectUserValue = formSelectUserValue;
 
     todo.push(todoObj);
+    updateLocalStorageForTasks(todo);
+    console.log(todo);
 
     renderTask(todoObj);
 
