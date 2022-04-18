@@ -33,7 +33,6 @@ let newCard;
 // }
 
 export function renderTask(todoObj) {
-
   function createNewCard() {
     newCard = document.createElement("div");
     newCard.classList.add("board__card");
@@ -82,7 +81,7 @@ export function renderTask(todoObj) {
                     </button>
                   </div>`;
 
-                  return newCard;
+  return newCard;
 }
 
 export function addTask() {
@@ -131,6 +130,13 @@ export function addTask() {
     todoObj.descriptionValue = formDescriptionValue;
     todoObj.dueDateValue = formDueDateValue;
     todoObj.selectUserValue = formSelectUserValue;
+
+    let parsedToDo = JSON.parse(localStorage.getItem("tasks"));
+    if (parsedToDo !== null) {
+      todo = parsedToDo;
+    } else {
+      todo = [];
+    }
 
     todo.push(todoObj);
     updateLocalStorageForTasks(todo);

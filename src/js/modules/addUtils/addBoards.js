@@ -10,13 +10,16 @@ export function addBoards() {
   const boardItem = document.createElement("div");
   boardItem.classList.add("board");
 
+  const boardsList = document.getElementsByClassName("board");
+  let id = boardsList.length;
+
   boardItem.innerHTML = `
     <div class="board__title">
       <h2 contenteditable="true">New Board</h2>
       <p>0</p>
     </div>
 
-    <div class="cards-list"></div>
+    <div class="cards-list" id="${id}"></div>
   `;
 
   boards.append(boardItem);
