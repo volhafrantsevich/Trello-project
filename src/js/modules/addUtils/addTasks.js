@@ -132,6 +132,7 @@ export function addTask() {
     todoObj.dueDateValue = formDueDateValue;
     todoObj.selectUserValue = formSelectUserValue;
 
+	 todo = JSON.parse(localStorage.getItem('tasks'));
     todo.push(todoObj);
     updateLocalStorageForTasks(todo);
     console.log(todo);
