@@ -1,4 +1,5 @@
 import { createDragAndDrop } from "../drag&drop/drag&drop";
+import { updateLocalStorageForTasks } from "../localStorage/updateLocalStorageTasks";
 
 const cardsLists = document.querySelectorAll(".cards-list");
 
@@ -17,7 +18,7 @@ let formDueDateValue = "";
 
 let formSelectUserValue = "";
 
-let todo = [];
+export let todo = [];
 let todoObj = {};
 
 const formCancelBtn = document.querySelector(".btn-cancel");
@@ -31,7 +32,7 @@ function createNewCard() {
   newCard.draggable = true;
 }
 
-function renderTask(todoObj) {
+export function renderTask(todoObj) {
   createNewCard();
   return (newCard.innerHTML = `
                   <div class="board__block">
@@ -123,6 +124,7 @@ export function addTask() {
     todoObj.selectUserValue = formSelectUserValue;
 
     todo.push(todoObj);
+    updateLocalStorageForTasks(todo);
 
     renderTask(todoObj);
 

@@ -1,3 +1,10 @@
+// localStorage for tasks
+import { renderTasksFromLocalStorage } from "./modules/localStorage/renderTasksFromLocalStorage";
+import { todo } from "./modules/addUtils/addTasks";
+
+// renderTasksFromLocalStorage(todo);
+
+
 import { getUsers } from "./modules/select/getUsers";
 
 getUsers();
