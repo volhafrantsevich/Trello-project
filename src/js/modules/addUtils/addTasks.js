@@ -139,6 +139,8 @@ export function addTask() {
     renderTask(todoObj);
 
     cardsLists[0].appendChild(newCard);
+    console.log(cardsLists[0]);
+
 
     formTitle.value = "";
     formTitleValue = "";
