@@ -123,13 +123,17 @@ export function addTask() {
   }
 
   // Кнопка Confirm
-  formConfirmBtn.addEventListener("click", () => {
+  formConfirmBtn.addEventListener("click", (event) => {
     getValueOption();
 
     todoObj.titleValue = formTitleValue;
     todoObj.descriptionValue = formDescriptionValue;
     todoObj.dueDateValue = formDueDateValue;
     todoObj.selectUserValue = formSelectUserValue;
+
+    let parent = event.target.parentElement;
+    let parentId = +parent.getAttribute("id");
+    todoObj.id = parentId;
 
     let parsedToDo = JSON.parse(localStorage.getItem("tasks"));
     if (parsedToDo !== null) {
