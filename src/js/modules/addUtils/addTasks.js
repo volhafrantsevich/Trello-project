@@ -1,5 +1,6 @@
 import { createDragAndDrop } from "../drag&drop/drag&drop";
 import { updateLocalStorageForTasks } from "../localStorage/updateLocalStorageTasks";
+import { delCard } from "../delCard/delCard"
 
 const cardsLists = document.querySelectorAll(".cards-list");
 
@@ -160,7 +161,8 @@ export function addTask() {
     // formSelectUser.value = "Select user";
     formSelectUserValue = "";
     formAdd.style.display = "none";
-
+	 
+	 delCard();
     createDragAndDrop();
   });
 
