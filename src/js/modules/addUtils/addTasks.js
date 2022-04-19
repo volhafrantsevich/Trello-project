@@ -1,4 +1,5 @@
 import { createDragAndDrop } from "../drag&drop/drag&drop";
+import { editTask } from "../editUtils/editTasks";
 import { updateLocalStorageForTasks } from "../localStorage/updateLocalStorageTasks";
 
 const cardsLists = document.querySelectorAll(".cards-list");
@@ -25,6 +26,8 @@ const formCancelBtn = document.querySelector(".btn-cancel");
 const formConfirmBtn = document.querySelector(".btn-confirm");
 
 let newCard;
+//edit
+let editBtn;
 
 // function createNewCard() {
 //   newCard = document.createElement("div");
@@ -81,7 +84,7 @@ export function renderTask(todoObj) {
                       </svg>
                     </button>
                   </div>`;
-
+                  
                   return newCard;
 }
 
@@ -140,6 +143,11 @@ export function addTask() {
 
     cardsLists[0].appendChild(newCard);
 
+    editBtn = document.querySelector(".btn-edit");
+    editBtn.addEventListener("click", () => {
+      formAdd.style.display = "block";
+    });
+
     formTitle.value = "";
     formTitleValue = "";
     formDescription.value = "";
@@ -151,6 +159,8 @@ export function addTask() {
     formAdd.style.display = "none";
 
     createDragAndDrop();
+
+    editTask();
   });
 
   // Кнопка Cancel
