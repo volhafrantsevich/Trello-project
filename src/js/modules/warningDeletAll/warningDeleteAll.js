@@ -29,10 +29,36 @@ btnConfirmDelAll.addEventListener('click', ()=> {
 // Счетчик карточек
 
 function getTotal(){
-    const cardList = document.querySelectorAll('.cards-list > .board__card')
+    const cardList = document.querySelectorAll('.cards-list > .board__card');
     total.textContent = cardList.length;    
 }
 setInterval(getTotal,1)
+
+// colors 
+
+let colors = ['LightCoral', 'Salmon', 'Red', 'Pink', 'HotPink', 'Coral', 'OrangeRed', 'Orange', 'Gold', 'yellow','Fuchsia',
+  'BlueViolet', 'Purple', 'DarkSlateBlue', 'GreenYellow', 'Lime', 'MediumSpringGreen', 'YellowGreen', 'Aqua', 'Aquamarine',
+  'DeepSkyBlue', 'Blue', 'DarkBlue' ];
+
+const btnConfirm = document.querySelector('.btn-confirm');
+
+btnConfirm.addEventListener('click', function (){
+    
+   
+    const cardList = document.querySelectorAll('.cards-list > .board__card');
+    for(let i = 0 ; i < cardList.length; i++){
+        let randomColor = colors[Math.floor(Math.random() * colors.length)];
+        let boardCard = document.querySelector('.board__card');
+
+        cardList[i].style.background = randomColor;
+    }
+        
+        
+    
+    
+})
+
+
 
 
 
