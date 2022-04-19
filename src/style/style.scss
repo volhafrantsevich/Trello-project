@@ -7,6 +7,9 @@
 .header {
   background-color: $bgWrapper;
   padding: 5px 0;
+  position: fixed;
+  z-index: 1;
+  width: 100%;
   .container {
     display: flex;
     justify-content: space-between;
@@ -42,7 +45,8 @@
   }
 }
 .root {
-  padding: 20px 0 300px;
+  min-height: 100vh;
+  padding: 65px 0 300px;
   background-image: url(../assets/images/backgr.jpg);
   background-repeat: no-repeat;
   background-size: cover;
@@ -55,19 +59,19 @@
       display: flex;
       flex-wrap: nowrap;
       margin-right: 40px;
-		min-width: 370px;
-		width: 100%;
+      min-width: 370px;
+      width: 100%;
     }
   }
 }
 
 .board {
-	display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
   max-width: 270px;
   width: 100%;
   min-height: 220px;
-  padding: 10px;
+  padding: 10px 10px 40px 10px;
   background-color: $bgBoard;
   border-radius: 3px;
   margin-right: 40px;
@@ -92,12 +96,12 @@
     }
   }
 
-  .cards-list{
-	  min-height:70%;
+  .cards-list {
+    min-height: 70%;
   }
 
   &__card {
-	 cursor: grabbing; 
+    cursor: grabbing;
     display: flex;
     justify-content: space-between;
     background-color: $textWhite;
@@ -109,9 +113,9 @@
     &:hover .board__buttons {
       display: flex;
     }
-	&.dragged{
-		border: 2px solid $bgWrapper;
-	}
+    &.dragged {
+      border: 2px solid $bgWrapper;
+    }
   }
 
   &__block {
@@ -122,17 +126,16 @@
         margin-bottom: 0;
       }
     }
-	 .clock{
-		 display: flex;
-		 align-items: center;
-		margin-bottom: 5px;
-	 }
+    .clock {
+      display: flex;
+      align-items: center;
+      margin-bottom: 5px;
+    }
     svg {
-		margin-right: 5px;
-		width: 25px;
-	   height: 25px;
-		display: block;
-    
+      margin-right: 5px;
+      width: 25px;
+      height: 25px;
+      display: block;
     }
     .user {
       display: flex;
@@ -176,9 +179,15 @@
     }
   }
   &__bottom {
-	  margin-top: auto;
+    margin-top: auto;
     display: flex;
     justify-content: space-between;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    padding: 5px 10px;
     .btn {
       border: none;
       padding: 5px;

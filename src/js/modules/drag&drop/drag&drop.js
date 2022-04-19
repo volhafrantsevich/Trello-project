@@ -15,19 +15,17 @@ export function createDragAndDrop() {
       }, 0);
     });
 
-		card.addEventListener('dragend', () => {
-			draggedCard.classList.remove('dragged');
-			
-			setTimeout(() => {
-				card.style.display = 'flex';
-			draggedCard = null;
-			}, 0)
+    card.addEventListener("dragend", () => {
+      draggedCard.classList.remove("dragged");
 
-		})
+      setTimeout(() => {
+        card.style.display = "flex";
+        draggedCard = null;
+      }, 0);
+    });
 
     for (let j = 0; j < cardsLists.length; j++) {
       const list = cardsLists[j];
-
 
       list.addEventListener("dragover", (e) => e.preventDefault());
       list.addEventListener("dragenter", function (e) {
