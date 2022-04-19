@@ -1,3 +1,4 @@
+import {todo} from '../addUtils/addTasks'
 export 
 const btnDeleteAll = document.querySelector('.btn-delete-all');
 const warningDelAll = document.querySelector('.warning.del-all');
@@ -13,29 +14,28 @@ btnDeleteAll.addEventListener('click', () => {
 
 itemBtnCancel.addEventListener('click', () => warningDelAll.style.display = 'none' )
 
-import {todo} from '../addUtils/addTasks'
-
-
-
 //Удаление всех карточек
 
-btnConfirmDelAll.addEventListener('click', ()=> {   
-    todo.length = 0;
-    total.textContent = todo.length;
+btnConfirmDelAll.addEventListener('click', ()=> {      
+    
     const cardList = document.querySelectorAll('.cards-list > .board__card')
     for (let i =0; i < cardList.length; i++ ){
         cardList[i].outerHTML = '';             
     } 
     warningDelAll.style.display = 'none';   
-    console.log(cardList.length);
+    todo.length = 0;
 })
 
 // Счетчик карточек
 
 function getTotal(){
-    total.textContent = todo.length;
+    const cardList = document.querySelectorAll('.cards-list > .board__card')
+    total.textContent = cardList.length;    
 }
 setInterval(getTotal,1)
+
+
+
 
 
 
