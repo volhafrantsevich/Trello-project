@@ -26,7 +26,9 @@ import { createDragAndDrop } from "./modules/drag&drop/drag&drop";
 createDragAndDrop()
 
 //DelAll
-import { delAll } from "./modules/delUtils/delAll"
 
 import {warningDeleteAll} from "./modules/warningDeletAll/warningDeleteAll"
+
+import { delCard } from "./modules/delCard/delCard"
+delCard()
 
