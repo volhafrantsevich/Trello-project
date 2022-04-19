@@ -13,9 +13,11 @@ export function addBoards() {
   const boardsList = document.querySelectorAll(".board");
   let id = boardsList.length;
 
+  let boardTitleValue = "Ahahaha";
+
   boardItem.innerHTML = `
     <div class="board__title">
-      <h2 contenteditable="true">New Board</h2>
+      <h2 contenteditable="true">${boardTitleValue}</h2>
       <p>0</p>
     </div>
 
@@ -24,36 +26,22 @@ export function addBoards() {
 
   boards.append(boardItem);
 
+  // localStorage
+
+  let boardsArr = JSON.parse(localStorage.getItem("boards"));
+
+  if (boardsArr === null) {
+    boardsArr = [];
+  }
+
+  boardsArr.push({
+    id: id,
+    title: boardTitleValue,
+  });
+
+  localStorage.setItem("boards", JSON.stringify(boardsArr));
+
   createDragAndDrop();
+
+  return boardItem;
 }
-
-// let boards = [];
-// let boardObj = {};
-
-// const boardTitle = document.querySelector(".board__title h2");
-// let boardTitleValue = "New Board";
-
-// export function addBoards() {
-//   const boardItem = document.createElement("div");
-//   boardItem.classList.add("board");
-
-//   const boardsList = document.querySelectorAll(".board");
-//   let id = boardsList.length;
-
-//   boardObj.titleValue = boardTitleValue;
-
-//   boardItem.innerHTML = `
-//     <div class="board__title">
-//       <h2 contenteditable="true">${boardObj.titleValue}</h2>
-//       <p>0</p>
-//     </div>
-
-//     <div class="cards-list" id="${id}"></div>
-//   `;
-
-//   boards.push(boardObj);
-
-//   createDragAndDrop();
-
-//   return boardItem;
-// }

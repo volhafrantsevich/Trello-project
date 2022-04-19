@@ -2,17 +2,18 @@
 import { renderTasksFromLocalStorage } from "./modules/localStorage/renderTasksFromLocalStorage";
 import { todo } from "./modules/addUtils/addTasks";
 
-renderTasksFromLocalStorage(todo);
+import { renderBoardsFromLocalStorage } from "./modules/localStorage/renderBoardsFromLocalStorage";
 
+renderTasksFromLocalStorage(todo);
+renderBoardsFromLocalStorage();
 
 import { getUsers } from "./modules/select/getUsers";
 
 getUsers();
 
 /**Clock */
-import { showTime } from "./modules/clock/showTime"
+import { showTime } from "./modules/clock/showTime";
 setInterval(showTime, 1000);
-
 
 //Boards
 import { addBoards } from "./modules/addUtils/addBoards";
@@ -23,11 +24,10 @@ addTask();
 
 //Drag&drop
 import { createDragAndDrop } from "./modules/drag&drop/drag&drop";
-createDragAndDrop()
+createDragAndDrop();
 
-//DelAll
-
-import {warningDeleteAll} from "./modules/warningDeletAll/warningDeleteAll"
+//Del
+import { warningDeleteAll } from "./modules/warningDeletAll/warningDeleteAll";
 
 import { delCard } from "./modules/delCard/delCard"
 delCard()
