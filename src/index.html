@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	 <link rel="stylesheet" href="./assets/font/font.css">
+    <link rel="stylesheet" href="./assets/font/font.css" />
     <link rel="stylesheet" href="./style/style.scss" />
     <title>Trello</title>
   </head>
@@ -29,7 +29,7 @@
                 <p class="total">0</p>
               </div>
 
-              <div class="cards-list">
+              <div class="cards-list" id="0">
                 <!-- <div class="board__card" draggable="true">
                   <div class="board__block">
                     <p>Title</p>
@@ -110,43 +110,43 @@
                     </div>
                   </div>
                 </div> -->
-					 <div class="card-form add-item">
-						<input
-						  class="card-form__title item"
-						  type="text"
-						  placeholder="Title"
-						/>
-						<textarea
-						  class="card-form__desc item"
-						  placeholder="Description"
-						></textarea>
-  
-						<label for="card-form__deadline">
-						  <input
-							 class="item"
-							 id="card-form__deadline"
-							 type="datetime-local"
-						  />
-						</label>
-  
-						<div class="card-form__choices" id="templateForSelect">
-						  <!-- <select class="item">
+                <div class="card-form add-item">
+                  <input
+                    class="card-form__title item"
+                    type="text"
+                    placeholder="Title"
+                  />
+                  <textarea
+                    class="card-form__desc item"
+                    placeholder="Description"
+                  ></textarea>
+
+                  <label for="card-form__deadline">
+                    <input
+                      class="item"
+                      id="card-form__deadline"
+                      type="datetime-local"
+                    />
+                  </label>
+
+                  <div class="card-form__choices" id="templateForSelect">
+                    <!-- <select class="item">
 							 <option value="Select user" selected>Select user</option>
 							 <option value="User 1">User 1</option>
 							 <option value="User 2">User 2</option>
 							 <option value="User 3">User 3</option>
 						  </select> -->
-						  <div class="card-form__buttons">
-							 <button class="item btn-cancel" type="reset">Cancel</button>
-							 <button class="item btn-confirm" type="submit">
-								Confirm
-							 </button>
-						  </div>
-						</div>
-					 </div>
-					</div>
-
-             
+                    <div class="card-form__buttons">
+                      <button class="item btn-cancel" type="reset">
+                        Cancel
+                      </button>
+                      <button class="item btn-confirm" type="submit">
+                        Confirm
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
 
               <div class="board__bottom">
                 <button class="btn btn-add">
