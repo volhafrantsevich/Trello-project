@@ -23,7 +23,8 @@ btnConfirmDelAll.addEventListener('click', ()=> {
         cardList[i].outerHTML = '';             
     } 
     warningDelAll.style.display = 'none';   
-    todo.length = 0;
+   
+	 window.localStorage.clear()
 })
 
 // Счетчик карточек
