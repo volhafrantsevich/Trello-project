@@ -38,6 +38,7 @@ export function renderTask(todoObj) {
     newCard = document.createElement("div");
     newCard.classList.add("board__card");
     newCard.draggable = true;
+	 newCard.setAttribute('id', todoObj.id)
   }
 
   createNewCard();
