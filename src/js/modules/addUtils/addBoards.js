@@ -19,7 +19,7 @@ export function addBoards() {
 	boardItem.innerHTML = `
     <div class="board__title">
       <h2 contenteditable="true">${boardTitleValue}</h2>
-      <p>0</p>
+      <p class="total">0</p>
     </div>
 
     <div class="cards-list" id="${id}"></div>
