@@ -48,6 +48,8 @@ createDragAndDrop();
 //Del
 import { warningDeleteAll } from "./modules/warningDeletAll/warningDeleteAll";
 
-import { delCard } from "./modules/delCard/delCard"
+import { delCard } from "./modules/del/delCard"
 delCard()
 
+import { delBoard } from "./modules/del/delBoard"
+delBoard() 

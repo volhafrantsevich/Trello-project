@@ -1,6 +1,6 @@
 import { createDragAndDrop } from "../drag&drop/drag&drop";
 import { updateLocalStorageForTasks } from "../localStorage/updateLocalStorageTasks";
-import { delCard } from "../delCard/delCard"
+import { delCard } from "../del/delCard"
 
 const cardsLists = document.querySelectorAll(".cards-list");
 
