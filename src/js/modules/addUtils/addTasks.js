@@ -20,7 +20,7 @@ let formDueDateValue = "";
 let formSelectUserValue = "";
 
 export let todo = [];
-let todoObj = {};
+export let todoObj = {};
 
 const formCancelBtn = document.querySelector(".btn-cancel");
 const formConfirmBtn = document.querySelector(".btn-confirm");
@@ -135,7 +135,8 @@ export function addTask() {
 
     let parent = event.target.parentElement;
     let parentId = +parent.getAttribute("id");
-    todoObj.id = parentId;
+    todoObj.board = parentId;
+	 todoObj.id = new Date().getTime();
 
     let parsedToDo = JSON.parse(localStorage.getItem("tasks"));
     if (parsedToDo !== null) {
