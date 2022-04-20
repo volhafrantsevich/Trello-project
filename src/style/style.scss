@@ -295,4 +295,7 @@
     height: 15px;
     margin-right: 10px;
   }
+ &:disabled{
+	 cursor: not-allowed;
+ }
 }

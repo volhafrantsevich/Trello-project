@@ -42,6 +42,17 @@ export function addBoards() {
   localStorage.setItem("boards", JSON.stringify(boardsArr));
 
   createDragAndDrop();
+  checkBoardsAmount() 
 
   return boardItem;
+}
+
+export function checkBoardsAmount() {
+const boardsList = document.querySelectorAll(".board");
+const btnAddBoard = document.querySelector(".btn-add-board");
+console.log(boardsList.length)
+
+if(boardsList.length > 4){
+btnAddBoard.setAttribute("disabled", "disabled")
+}
 }

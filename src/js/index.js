@@ -4,6 +4,9 @@ import { getUsers } from "./modules/select/getUsers";
 
 import { renderBoardsFromLocalStorage } from "./modules/localStorage/renderBoardsFromLocalStorage";
 
+import { checkBoardsAmount } from "./modules/addUtils/addBoards"
+checkBoardsAmount() 
+
 // function updateLocalStorageInitBoard() {
 // 	const board = document.querySelectorAll(".board");
 
