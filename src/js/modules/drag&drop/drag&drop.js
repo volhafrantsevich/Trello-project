@@ -18,21 +18,23 @@ export function createDragAndDrop() {
 
 		card.addEventListener("dragend", (e) => {
 			draggedCard.classList.remove("dragged");
+
 			let parent = e.target.parentElement;
-			let parentId = +parent.getAttribute("id");
+			let parentId = parent.getAttribute("id");
 			todoObj.board = parentId;
-			console.log(todoObj.board);
 
 			//localStorage
 			let parsedToDo = JSON.parse(localStorage.getItem("tasks"));
-			parsedToDo.forEach(element => {
-				//e.target.id не работает
-				if (e.target.id === element.id) {
+			parsedToDo.forEach(todoObj => {
+				
+				if (e.target.id === todoObj.id) {
 					todoObj.board = parentId
 					console.log(todoObj.board)
-					localStorage.setItem('tasks', JSON.stringify(element));
 				}
 			});
+			parsedToDo.push(todoObj)
+
+			localStorage.setItem('tasks', JSON.stringify(parsedToDo));
 
 			setTimeout(() => {
 				card.style.display = "flex";

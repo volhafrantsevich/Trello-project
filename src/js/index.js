@@ -5,14 +5,19 @@ import { getUsers } from "./modules/select/getUsers";
 import { renderBoardsFromLocalStorage } from "./modules/localStorage/renderBoardsFromLocalStorage";
 
 // function updateLocalStorageInitBoard() {
-// 	let boardsArr = [];
+// 	const board = document.querySelectorAll(".board");
 
+// 	let boardsArr = JSON.parse(localStorage.getItem("boards"));
 // 	let id = 0;
 // 	let boardTitleValue = "New board";
-// 	boardsArr.push({
-// 		id: id,
-// 		title: boardTitleValue,
-// 	})
+// 	if (boardsArr === null) {
+// 		boardsArr.push({
+// 			id: id,
+// 			title: boardTitleValue,
+// 		})
+// 	}
+ 	
+	
 // 	localStorage.setItem('boards', JSON.stringify(boardsArr));
 // };
 // updateLocalStorageInitBoard();
