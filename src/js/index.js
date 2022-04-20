@@ -4,19 +4,6 @@ import { getUsers } from "./modules/select/getUsers";
 
 import { renderBoardsFromLocalStorage } from "./modules/localStorage/renderBoardsFromLocalStorage";
 
-// function updateLocalStorageInitBoard() {
-// 	let boardsArr = [];
-
-// 	let id = 0;
-// 	let boardTitleValue = "New board";
-// 	boardsArr.push({
-// 		id: id,
-// 		title: boardTitleValue,
-// 	})
-// 	localStorage.setItem('boards', JSON.stringify(boardsArr));
-// };
-// updateLocalStorageInitBoard();
-
 renderTasksFromLocalStorage();
 renderBoardsFromLocalStorage();
 
