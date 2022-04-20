@@ -1,6 +1,7 @@
 import { createDragAndDrop } from "../drag&drop/drag&drop";
 import { updateLocalStorageForTasks } from "../localStorage/updateLocalStorageTasks";
 import { delCard } from "../delCard/delCard"
+import { editCard } from "../editCard/editCard";
 
 const cardsLists = document.querySelectorAll(".cards-list");
 
@@ -44,8 +45,8 @@ export function renderTask(todoObj) {
   createNewCard();
   newCard.innerHTML = `
                   <div class="board__block">
-                    <p>${todoObj.titleValue}</p>
-                    <p>${todoObj.descriptionValue}</p>
+                    <p class="title_task">${todoObj.titleValue}</p>
+                    <p class="descrip_task">${todoObj.descriptionValue}</p>
                     <div class="clock">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -165,6 +166,7 @@ export function addTask() {
     formAdd.style.display = "none";
 	 
 	 delCard();
+   editCard();
     createDragAndDrop();
   });
 

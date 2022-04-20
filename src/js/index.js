@@ -43,3 +43,6 @@ import { warningDeleteAll } from "./modules/warningDeletAll/warningDeleteAll";
 import { delCard } from "./modules/delCard/delCard"
 delCard()
 
+//Edit 
+import { editCard } from "./modules/editCard/editCard";
+editCard();
