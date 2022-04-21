@@ -1,6 +1,7 @@
 import { createDragAndDrop } from "../drag&drop/drag&drop";
 import { updateLocalStorageForTasks } from "../localStorage/updateLocalStorageTasks";
-import { delCard } from "../del/delCard"
+import { editCard } from "../editCard/editCard";
+import { delCard } from "../del/delCard";
 
 const cardsLists = document.querySelectorAll(".cards-list");
 
@@ -44,8 +45,8 @@ export function renderTask(todoObj) {
   createNewCard();
   newCard.innerHTML = `
                   <div class="board__block">
-                    <p>${todoObj.titleValue}</p>
-                    <p>${todoObj.descriptionValue}</p>
+                    <p class="title_task">${todoObj.titleValue}</p>
+                    <p class="descrip_task">${todoObj.descriptionValue}</p>
                     <div class="clock">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -127,7 +128,7 @@ export function addTask() {
   // Кнопка Confirm
   formConfirmBtn.addEventListener("click", (event) => {
     getValueOption();
-    
+
 
     todoObj.titleValue = formTitleValue;
     todoObj.descriptionValue = formDescriptionValue;
@@ -137,7 +138,7 @@ export function addTask() {
     let parent = event.target.parentElement;
     let parentId = +parent.getAttribute("id");
     todoObj.board = parentId;
-	 todoObj.id = new Date().getTime().toString();
+    todoObj.id = new Date().getTime().toString();
 
     let parsedToDo = JSON.parse(localStorage.getItem("tasks"));
     if (parsedToDo !== null) {
@@ -163,8 +164,9 @@ export function addTask() {
     // formSelectUser.value = "Select user";
     formSelectUserValue = "";
     formAdd.style.display = "none";
-	 
-	 delCard();
+
+    delCard();
+    editCard();
     createDragAndDrop();
   });
 

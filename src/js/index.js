@@ -49,7 +49,14 @@ createDragAndDrop();
 import { warningDeleteAll } from "./modules/warningDeletAll/warningDeleteAll";
 
 import { delCard } from "./modules/del/delCard"
-delCard()
+delCard();
 
 import { delBoard } from "./modules/del/delBoard"
-delBoard() 
+delBoard();  
+
+//Edit 
+import { editCard } from "./modules/editCard/editCard";
+editCard();
+
+
+
