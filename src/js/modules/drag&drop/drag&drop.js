@@ -18,21 +18,38 @@ export function createDragAndDrop() {
 
 		card.addEventListener("dragend", (e) => {
 			draggedCard.classList.remove("dragged");
+
 			let parent = e.target.parentElement;
-			let parentId = +parent.getAttribute("id");
+			let parentId = parent.getAttribute("id");
 			todoObj.board = parentId;
-			console.log(todoObj.board);
 
 			//localStorage
 			let parsedToDo = JSON.parse(localStorage.getItem("tasks"));
-			parsedToDo.forEach(element => {
-				//e.target.id не работает
-				if (e.target.id === element.id) {
+			parsedToDo.forEach(todoObj => {
+
+				if (e.target.id === todoObj.id) {
 					todoObj.board = parentId
 					console.log(todoObj.board)
-					localStorage.setItem('tasks', JSON.stringify(element));
 				}
 			});
+			parsedToDo.push(todoObj)
+
+			localStorage.setItem('tasks', JSON.stringify(parsedToDo));
+
+			function getTotal2() {
+				const total2 = document.getElementsByClassName('total');
+				const cardLists = document.querySelectorAll('.cards-list');
+
+				for(let i = 0; i < total2.length; i++){
+					for(let j = 0; j < cardLists.length; j++){
+						if(j === i){
+							// не работает
+							total2[i].innerText = `${cardLists[j].length}`;
+						}
+					}
+				}
+							}
+			getTotal2()
 
 			setTimeout(() => {
 				card.style.display = "flex";

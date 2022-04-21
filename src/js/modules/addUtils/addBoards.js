@@ -1,5 +1,6 @@
 // Создание новых досок
 import { createDragAndDrop } from "../drag&drop/drag&drop";
+import { delBoard } from "../del/delBoard"
 
 const btnAddBoard = document.querySelector(".btn-add-board");
 btnAddBoard.addEventListener("click", addBoards);
@@ -7,41 +8,54 @@ btnAddBoard.addEventListener("click", addBoards);
 const boards = document.querySelector(".boards-wrapper");
 
 export function addBoards() {
-  const boardItem = document.createElement("div");
-  boardItem.classList.add("board");
+	const boardItem = document.createElement("div");
+	boardItem.classList.add("board");
 
-  const boardsList = document.querySelectorAll(".board");
-  let id = boardsList.length;
+	const boardsList = document.querySelectorAll(".board");
+	let id = boardsList.length;
 
-  let boardTitleValue = "Ahahaha";
+	let boardTitleValue = "Ahahaha";
 
-  boardItem.innerHTML = `
+	boardItem.innerHTML = `
     <div class="board__title">
       <h2 contenteditable="true">${boardTitleValue}</h2>
-      <p>0</p>
+      <p class="total">0</p>
     </div>
 
     <div class="cards-list" id="${id}"></div>
   `;
 
-  boards.append(boardItem);
+	boards.append(boardItem);
 
-  // localStorage
+	// localStorage
 
-  let boardsArr = JSON.parse(localStorage.getItem("boards"));
+	let boardsArr = JSON.parse(localStorage.getItem("boards"));
 
-  if (boardsArr === null) {
-    boardsArr = [];
-  }
+	if (boardsArr === null) {
+		boardsArr = [];
+	}
 
-  boardsArr.push({
-    id: id,
-    title: boardTitleValue,
-  });
+	boardsArr.push({
+		id: id,
+		title: boardTitleValue,
+	});
 
-  localStorage.setItem("boards", JSON.stringify(boardsArr));
+	localStorage.setItem("boards", JSON.stringify(boardsArr));
 
-  createDragAndDrop();
+	createDragAndDrop();
+	checkBoardsAmount();
+	delBoard();
 
-  return boardItem;
+	return boardItem;
+}
+
+export function checkBoardsAmount() {
+	const boardsList = document.querySelectorAll(".board");
+	const btnAddBoard = document.querySelector(".btn-add-board");
+	console.log(boardsList.length)
+
+	if (boardsList.length > 4) {
+		btnAddBoard.setAttribute("disabled", "disabled")
+		btnAddBoard.style.display = 'none'
+	}
 }

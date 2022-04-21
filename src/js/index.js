@@ -4,15 +4,23 @@ import { getUsers } from "./modules/select/getUsers";
 
 import { renderBoardsFromLocalStorage } from "./modules/localStorage/renderBoardsFromLocalStorage";
 
-// function updateLocalStorageInitBoard() {
-// 	let boardsArr = [];
+import { checkBoardsAmount } from "./modules/addUtils/addBoards"
+checkBoardsAmount() 
 
+// function updateLocalStorageInitBoard() {
+// 	const board = document.querySelectorAll(".board");
+
+// 	let boardsArr = JSON.parse(localStorage.getItem("boards"));
 // 	let id = 0;
 // 	let boardTitleValue = "New board";
-// 	boardsArr.push({
-// 		id: id,
-// 		title: boardTitleValue,
-// 	})
+// 	if (boardsArr === null) {
+// 		boardsArr.push({
+// 			id: id,
+// 			title: boardTitleValue,
+// 		})
+// 	}
+ 	
+	
 // 	localStorage.setItem('boards', JSON.stringify(boardsArr));
 // };
 // updateLocalStorageInitBoard();
@@ -40,9 +48,15 @@ createDragAndDrop();
 //Del
 import { warningDeleteAll } from "./modules/warningDeletAll/warningDeleteAll";
 
-import { delCard } from "./modules/delCard/delCard"
-delCard()
+import { delCard } from "./modules/del/delCard"
+delCard();
+
+import { delBoard } from "./modules/del/delBoard"
+delBoard();  
 
 //Edit 
 import { editCard } from "./modules/editCard/editCard";
 editCard();
+
+
+

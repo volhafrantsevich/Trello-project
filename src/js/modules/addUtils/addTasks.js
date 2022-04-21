@@ -1,7 +1,7 @@
 import { createDragAndDrop } from "../drag&drop/drag&drop";
 import { updateLocalStorageForTasks } from "../localStorage/updateLocalStorageTasks";
-import { delCard } from "../delCard/delCard"
 import { editCard } from "../editCard/editCard";
+import { delCard } from "../del/delCard";
 
 const cardsLists = document.querySelectorAll(".cards-list");
 
@@ -39,7 +39,7 @@ export function renderTask(todoObj) {
     newCard = document.createElement("div");
     newCard.classList.add("board__card");
     newCard.draggable = true;
-    newCard.setAttribute('id', todoObj.id)
+	 newCard.setAttribute('id', `${todoObj.id}`)
   }
 
   createNewCard();
@@ -138,7 +138,7 @@ export function addTask() {
     let parent = event.target.parentElement;
     let parentId = +parent.getAttribute("id");
     todoObj.board = parentId;
-    todoObj.id = new Date().getTime();
+    todoObj.id = new Date().getTime().toString();
 
     let parsedToDo = JSON.parse(localStorage.getItem("tasks"));
     if (parsedToDo !== null) {
