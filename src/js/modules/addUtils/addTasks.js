@@ -39,7 +39,7 @@ export function renderTask(todoObj) {
     newCard = document.createElement("div");
     newCard.classList.add("board__card");
     newCard.draggable = true;
-	 newCard.setAttribute('id', todoObj.id)
+    newCard.setAttribute('id', todoObj.id)
   }
 
   createNewCard();
@@ -128,7 +128,7 @@ export function addTask() {
   // Кнопка Confirm
   formConfirmBtn.addEventListener("click", (event) => {
     getValueOption();
-    
+
 
     todoObj.titleValue = formTitleValue;
     todoObj.descriptionValue = formDescriptionValue;
@@ -138,7 +138,7 @@ export function addTask() {
     let parent = event.target.parentElement;
     let parentId = +parent.getAttribute("id");
     todoObj.board = parentId;
-	 todoObj.id = new Date().getTime();
+    todoObj.id = new Date().getTime();
 
     let parsedToDo = JSON.parse(localStorage.getItem("tasks"));
     if (parsedToDo !== null) {
@@ -164,9 +164,9 @@ export function addTask() {
     // formSelectUser.value = "Select user";
     formSelectUserValue = "";
     formAdd.style.display = "none";
-	 
-	 delCard();
-   editCard();
+
+    delCard();
+    editCard();
     createDragAndDrop();
   });
 
