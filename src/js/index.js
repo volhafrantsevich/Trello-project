@@ -7,23 +7,24 @@ import { renderBoardsFromLocalStorage } from "./modules/localStorage/renderBoard
 import { checkBoardsAmount } from "./modules/addUtils/addBoards"
 checkBoardsAmount() 
 
-// function updateLocalStorageInitBoard() {
-// 	const board = document.querySelectorAll(".board");
+function updateLocalStorageInitBoard() {
+	const board = document.querySelectorAll(".board");
 
-// 	let boardsArr = JSON.parse(localStorage.getItem("boards"));
-// 	let id = 0;
-// 	let boardTitleValue = "New board";
-// 	if (boardsArr === null) {
-// 		boardsArr.push({
-// 			id: id,
-// 			title: boardTitleValue,
-// 		})
-// 	}
+	let boardsArr = [];
+
+	let id = 0;
+	let boardTitleValue = "New board";
+	
+		boardsArr.push({
+			id: id,
+			title: boardTitleValue,
+		})
+	
  	
 	
-// 	localStorage.setItem('boards', JSON.stringify(boardsArr));
-// };
-// updateLocalStorageInitBoard();
+	localStorage.setItem('boards', JSON.stringify(boardsArr));
+};
+updateLocalStorageInitBoard();
 
 renderTasksFromLocalStorage();
 renderBoardsFromLocalStorage();
@@ -55,8 +56,10 @@ import { delBoard } from "./modules/del/delBoard"
 delBoard();  
 
 //Edit 
-import { editCard } from "./modules/editCard/editCard";
+import { editCard } from "./modules/edit/editCard";
 editCard();
+
+import { editBoardTitle } from "./modules/edit/editBoardTitle";
 
 
 

@@ -1,6 +1,8 @@
 // Создание новых досок
 import { createDragAndDrop } from "../drag&drop/drag&drop";
 import { delBoard } from "../del/delBoard"
+import { editBoardTitle } from "../edit/editBoardTitle";
+import { renderBoardsFromLocalStorage } from "../localStorage/renderBoardsFromLocalStorage";
 
 const btnAddBoard = document.querySelector(".btn-add-board");
 btnAddBoard.addEventListener("click", addBoards);
@@ -20,7 +22,7 @@ export function addBoards() {
 
 	boardItem.innerHTML = `
     <div class="board__title">
-      <h2 contenteditable="true">${boardTitleValue}</h2>
+      <h2 class="titleB" contenteditable="true">${boardTitleValue}</h2>
       <p class="total">0</p>
     </div>
 
@@ -28,14 +30,11 @@ export function addBoards() {
   `;
 
 	boards.append(boardItem);
-
+	editBoardTitle()
 	// localStorage
 
 	let boardsArr = JSON.parse(localStorage.getItem("boards"));
-
-	if (boardsArr === null) {
-		boardsArr = [];
-	}
+	console.log(boardsArr.length + 'boardsArr.length (LS) by adding')
 
 	boardsArr.push({
 		id: id,
@@ -47,7 +46,6 @@ export function addBoards() {
 	createDragAndDrop();
 	checkBoardsAmount();
 	delBoard();
-
 	return boardItem;
 }
 
