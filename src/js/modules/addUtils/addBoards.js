@@ -14,6 +14,8 @@ export function addBoards() {
 	const boardsList = document.querySelectorAll(".board");
 	let id = boardsList.length;
 
+	boardItem.setAttribute('id', `${id}`);
+
 	let boardTitleValue = "Ahahaha";
 
 	boardItem.innerHTML = `
@@ -52,7 +54,6 @@ export function addBoards() {
 export function checkBoardsAmount() {
 	const boardsList = document.querySelectorAll(".board");
 	const btnAddBoard = document.querySelector(".btn-add-board");
-	console.log(boardsList.length)
 
 	if (boardsList.length > 4) {
 		btnAddBoard.setAttribute("disabled", "disabled")
