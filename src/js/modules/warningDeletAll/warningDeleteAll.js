@@ -53,10 +53,6 @@ btnConfirm.addEventListener('click', function (){
 
         cardList[i].style.background = randomColor;
     }
-        
-        
-    
-    
 })
 
 
